@@ -1,10 +1,10 @@
-import java.util.ArrayList;
 import java.util.Random;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         DifferentAlgorithms differentAlgorithms = new DifferentAlgorithms();
-        int arrLength = 100;
+        int arrLength = 10;
         int[] list = new int[arrLength];
 
         Random random = new Random();
@@ -17,13 +17,17 @@ public class Main {
         System.out.println("Искомое число имеет индекс " + differentAlgorithms.binarySearch(list,search));
 
 
-        ArrayList<Integer> integerArrayListForSorted = new ArrayList<>(arrLength);
-        for (int i = 0; i < arrLength; i++) {
-            integerArrayListForSorted.add(random.nextInt(arrLength*10));
-        }
+        List<Integer> integerArrayListForSorted = differentAlgorithms.createdArrayForSorted(arrLength);
         System.out.println("Неупорядоченный масиив");
         System.out.println(integerArrayListForSorted);
         System.out.println("Массив после сортировки");
         System.out.println(differentAlgorithms.selectionSort(integerArrayListForSorted));
+
+        integerArrayListForSorted = differentAlgorithms.createdArrayForSorted(arrLength);
+        System.out.println("Неупорядоченный масиив");
+        System.out.println(integerArrayListForSorted);
+        System.out.println("Массив после сортировки");
+        System.out.println(differentAlgorithms.quickSort(integerArrayListForSorted));
+
     }
 }
