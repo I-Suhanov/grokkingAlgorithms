@@ -1,5 +1,4 @@
-import java.util.Random;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -28,6 +27,20 @@ public class Main {
         System.out.println(integerArrayListForSorted);
         System.out.println("Массив после сортировки");
         System.out.println(differentAlgorithms.quickSort(integerArrayListForSorted));
+
+        Map<String, List<String>> graph = new HashMap<>();
+
+        graph.put("Bob", Arrays.asList("Alice", "Sten", "Mitchel"));
+        graph.put("Alice", Arrays.asList("Peggy", "Sten"));
+        graph.put("Sten", Arrays.asList("Anuj Mango", "Peggy"));
+        graph.put("Mitchel", Arrays.asList("Thom", "Jonny Mango"));
+        graph.put("Anuj Mango", Collections.emptyList());
+        graph.put("Peggy", Collections.emptyList());
+        graph.put("Thom", Collections.emptyList());
+        graph.put("Jonny Mango", Collections.emptyList());
+
+        System.out.println(differentAlgorithms.searchMangoSaler("Bob", graph));
+        System.out.println(differentAlgorithms.searchMangoSaler("Peggy", graph));
 
     }
 }

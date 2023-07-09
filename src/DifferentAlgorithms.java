@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class DifferentAlgorithms {
 
@@ -75,5 +73,30 @@ public class DifferentAlgorithms {
             result.addAll(quickSort(greater));
             return result;
         }
+    }
+
+    public String searchMangoSaler(String name, Map<String, List<String>> graph){
+        Queue<String> searchQueue = new ArrayDeque<>(graph.get(name));
+
+        List<String> searchedNames = new ArrayList<>();
+
+        while(!searchQueue.isEmpty()){
+            String person = searchQueue.poll();
+
+            if(!searchedNames.contains(person)){
+                if(personIsSeller(person)){
+                    return person;
+                } else {
+                    searchQueue.addAll(graph.get(person));
+                    searchedNames.add(person);
+                }
+            }
+        }
+
+        return "Продавец манго не найден";
+    }
+
+    public boolean personIsSeller(String name){
+        return name.contains("Mango");
     }
 }
