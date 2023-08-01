@@ -42,5 +42,11 @@ public class Main {
         System.out.println(differentAlgorithms.searchMangoSaler("Bob", graph));
         System.out.println(differentAlgorithms.searchMangoSaler("Peggy", graph));
 
+        System.out.println();
+        System.out.println("Алгоритм дейкстры");
+        DijkstrasAlgorithm dAlgorithm = new DijkstrasAlgorithm();
+
+        dAlgorithm.algorithmDijkstras();
+
     }
 }

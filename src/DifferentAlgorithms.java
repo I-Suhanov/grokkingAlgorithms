@@ -99,4 +99,5 @@ public class DifferentAlgorithms {
     public boolean personIsSeller(String name){
         return name.contains("Mango");
     }
+
 }
